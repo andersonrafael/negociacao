@@ -8,19 +8,17 @@ class NegociacaoController {
         this._imputValor = $('#valor');
     }
     adiciona(event){
+
         event.preventDefault();
-
-        let helper = new DateHelper();
       
-
       let negociacao = new Negociacao(
-        helper.textoParaData(this._imputData.value),
+        DateHelper.textoParaData(this._imputData.value),
           this._imputQuantidade.value,
           this._imputValor.value
       ); 
 
        console.log(negociacao);
-       console.log(helper.dataParaTexto(negociacao.data));
+       console.log(DateHelper.dataParaTexto(negociacao.data));
     
     }
 }
